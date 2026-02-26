@@ -138,19 +138,5 @@
         "price": 0.5
       }
     ]
-  },
-  {
-    "id": "basil",
-    "name": "Basil",
-    "description": "Tester",
-    "image": "images/products/1772087896092.jpg",
-    "options": [
-      {
-        "id": "large",
-        "label": "Large",
-        "pieces": 5,
-        "price": 2.5
-      }
-    ]
   }
 ]
