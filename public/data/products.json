@@ -1,12 +1,22 @@
 [
   {
     "id": "og",
-    "name": "OG Cookies",
+    "name": "OG Cookies test",
     "description": "Blossom's classic cookie dough filled with Belgium chocolate.",
     "image": "images/products/og-cookie.jpg",
     "options": [
-      { "id": "large", "label": "Large", "pieces": 5, "price": 2.5 },
-      { "id": "small", "label": "Small", "pieces": 10, "price": 2.5 }
+      {
+        "id": "large",
+        "label": "Large",
+        "pieces": 5,
+        "price": 2.5
+      },
+      {
+        "id": "small",
+        "label": "Small",
+        "pieces": 10,
+        "price": 2.5
+      }
     ]
   },
   {
@@ -15,8 +25,18 @@
     "description": "A blend of classic dough with rich cocoa, filled with Belgium chocolate.",
     "image": "images/products/double-chocolate.jpg",
     "options": [
-      { "id": "large", "label": "Large", "pieces": 5, "price": 2.7 },
-      { "id": "small", "label": "Small", "pieces": 10, "price": 2.7 }
+      {
+        "id": "large",
+        "label": "Large",
+        "pieces": 5,
+        "price": 2.7
+      },
+      {
+        "id": "small",
+        "label": "Small",
+        "pieces": 10,
+        "price": 2.7
+      }
     ]
   },
   {
@@ -25,8 +45,18 @@
     "description": "Matcha infused cookies filled with creamy white chocolate.",
     "image": "images/products/matcha-cookie.jpg",
     "options": [
-      { "id": "large", "label": "Large", "pieces": 5, "price": 3.0 },
-      { "id": "small", "label": "Small", "pieces": 10, "price": 3.0 }
+      {
+        "id": "large",
+        "label": "Large",
+        "pieces": 5,
+        "price": 3
+      },
+      {
+        "id": "small",
+        "label": "Small",
+        "pieces": 10,
+        "price": 3
+      }
     ]
   },
   {
@@ -35,8 +65,18 @@
     "description": "Crunchy surprises, Belgium chocolate, and toasted marshmallows.",
     "image": "images/products/campfire-cookie.jpg",
     "options": [
-      { "id": "large", "label": "Large", "pieces": 5, "price": 3.5 },
-      { "id": "small", "label": "Small", "pieces": 10, "price": 3.5 }
+      {
+        "id": "large",
+        "label": "Large",
+        "pieces": 5,
+        "price": 3.5
+      },
+      {
+        "id": "small",
+        "label": "Small",
+        "pieces": 10,
+        "price": 3.5
+      }
     ]
   },
   {
@@ -45,8 +85,18 @@
     "description": "Cookie dough packed with Biscoff crunch and melted Biscoff sauce.",
     "image": "images/products/triple-biscoff.jpg",
     "options": [
-      { "id": "large", "label": "Large", "pieces": 5, "price": 4.0 },
-      { "id": "small", "label": "Small", "pieces": 10, "price": 4.0 }
+      {
+        "id": "large",
+        "label": "Large",
+        "pieces": 5,
+        "price": 4
+      },
+      {
+        "id": "small",
+        "label": "Small",
+        "pieces": 10,
+        "price": 4
+      }
     ]
   },
   {
@@ -55,7 +105,12 @@
     "description": "A mix of each cookie type in one box — try everything!",
     "image": "images/products/mix-box.jpg",
     "options": [
-      { "id": "box", "label": "Box", "pieces": 5, "price": 3.5 }
+      {
+        "id": "box",
+        "label": "Box",
+        "pieces": 5,
+        "price": 3.5
+      }
     ]
   },
   {
@@ -64,11 +119,24 @@
     "description": "Thick fudgy brownies loaded with chocolate chunks — chewy center, crisp edges.",
     "image": null,
     "options": [
-      { "id": "large", "label": "Tray", "pieces": 16, "price": 7.0 }
+      {
+        "id": "large",
+        "label": "Tray",
+        "pieces": 16,
+        "price": 7
+      }
     ],
     "extras": [
-      { "id": "sauce", "label": "Extra chocolate sauce", "price": 0.5 },
-      { "id": "writing", "label": "Custom writing", "price": 0.5 }
+      {
+        "id": "sauce",
+        "label": "Extra chocolate sauce",
+        "price": 0.5
+      },
+      {
+        "id": "writing",
+        "label": "Custom writing",
+        "price": 0.5
+      }
     ]
   }
 ]
