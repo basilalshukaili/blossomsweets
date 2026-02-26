@@ -312,6 +312,14 @@ async function deleteFile(path, sha, message) {
   });
 }
 
+function isManagedProductImage(imagePath) {
+  return typeof imagePath === "string" && imagePath.startsWith("images/products/");
+}
+
+function isImageUsedByOtherProducts(imagePath, deletingIndex) {
+  return products.some((prod, idx) => idx !== deletingIndex && prod.image === imagePath);
+}
+
 // ═══════════════════════════════════════════════
 // LOAD PRODUCTS
 // ═══════════════════════════════════════════════
@@ -560,13 +568,23 @@ async function deleteProduct(index) {
   setStatus(`Deleting "${p.name}"…`, "");
 
   try {
-    // Delete image if exists
-    if (p.image) {
+    const warnings = [];
+
+    // Delete image only if it's an admin-managed file and not shared with other products.
+    if (p.image && isManagedProductImage(p.image) && !isImageUsedByOtherProducts(p.image, index)) {
       const imgFileName = p.image.split("/").pop();
       const imgPath = `${IMAGES_DIR}/${imgFileName}`;
-      const imgFile = await getFile(imgPath);
-      if (imgFile) {
-        await deleteFile(imgPath, imgFile.sha, `🗑️ Delete image for ${p.name}`);
+
+      try {
+        const imgFile = await getFile(imgPath);
+        if (imgFile) {
+          const delRes = await deleteFile(imgPath, imgFile.sha, `🗑️ Delete image for ${p.name}`);
+          if (!delRes.ok) {
+            warnings.push("Image file could not be removed, but product was deleted.");
+          }
+        }
+      } catch (_) {
+        warnings.push("Image file delete failed, but product deletion will continue.");
       }
     }
 
@@ -591,7 +609,10 @@ async function deleteProduct(index) {
     productsSha = resData.content.sha;
 
     renderProducts();
-    setStatus(`✅ "${p.name}" deleted. Site will rebuild automatically.`, "success");
+    const msg = warnings.length
+      ? `✅ "${p.name}" deleted. ${warnings[0]} Site will rebuild automatically.`
+      : `✅ "${p.name}" deleted. Site will rebuild automatically.`;
+    setStatus(msg, "success");
     setTimeout(hideStatus, 4000);
   } catch (e) {
     setStatus("Error: " + e.message, "error");
