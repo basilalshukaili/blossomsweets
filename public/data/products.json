@@ -112,31 +112,5 @@
         "price": 3.5
       }
     ]
-  },
-  {
-    "id": "brownies",
-    "name": "Fudgy Brownies",
-    "description": "Thick fudgy brownies loaded with chocolate chunks — chewy center, crisp edges.",
-    "image": null,
-    "options": [
-      {
-        "id": "large",
-        "label": "Tray",
-        "pieces": 16,
-        "price": 7
-      }
-    ],
-    "extras": [
-      {
-        "id": "sauce",
-        "label": "Extra chocolate sauce",
-        "price": 0.5
-      },
-      {
-        "id": "writing",
-        "label": "Custom writing",
-        "price": 0.5
-      }
-    ]
   }
 ]
